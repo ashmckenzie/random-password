@@ -14,6 +14,12 @@ h2. Install
 
 Run @bundle install@ to install necessary gems.
 
+h2. Test
+
+Run @rake test:run@
+
 h2. Code coverage
+
+Run @rake test:coverage:rcov@ then open @coverage/index.html@
 
 According to "rcov":https://github.com/relevance/rcov, 100% of the code is covered using "rspec":https://github.com/dchelimsky/rspec
