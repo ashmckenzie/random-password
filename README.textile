@@ -7,6 +7,12 @@ Hope it proves useful to someone out there :)
 h2. Gems used
 
 * "trollop":http://gitorious.org/trollop
+* "rspec":https://github.com/dchelimsky/rspec
+* "rcov":https://github.com/relevance/rcov
+
+h2. Install
+
+Run @bundle install@ to install necessary gems.
 
 h2. Code coverage
 
