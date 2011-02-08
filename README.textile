@@ -1,0 +1,13 @@
+h1. Random password generator
+
+Occasionally have the need to generate random passwords, specifically excluding certain nasty characters so I whipped this bad boy up.
+
+Hope it proves useful to someone out there :)
+
+h2. Gems used
+
+* "trollop":http://gitorious.org/trollop
+
+h2. Code coverage
+
+According to "rcov":https://github.com/relevance/rcov, 100% of the code is covered using "rspec":https://github.com/dchelimsky/rspec
