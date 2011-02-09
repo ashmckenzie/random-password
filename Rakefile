@@ -19,7 +19,7 @@ namespace :test do
 			t.test_files = FileList["test/*.rb"]
 			t.output_dir = "coverage/"
 			t.verbose = false
-			t.rcov_opts << '--aggregate coverage.data --exclude /gems/,/Library/,/usr/,spec,lib/tasks'
+			t.rcov_opts << '--aggregate coverage.data --exclude /gems/,/Library/,/usr/,spec,lib/tasks,rubies'
 		end
 
 	end

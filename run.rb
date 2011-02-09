@@ -16,3 +16,5 @@ end
 r = RandomPassword.new
 r.exclude_chars(opts[:exclude].split(','))
 puts r.passwords(opts[:count], opts[:length]).join("\n")
+puts '--'
+puts r.human_passwords(opts[:count], opts[:length]).join("\n")

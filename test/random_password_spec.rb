@@ -12,22 +12,27 @@ describe "Random password generator" do
 		it "should generate 3 random passwords with lengths of 8 characters" do
 			passwords = RandomPassword.passwords
 			passwords.size.should == 3
-			while p1 = passwords.pop
-				passwords.each do |p2|
-					p1.length.should == 8
-					p1.should_not === p2
-				end
+			while p = passwords.pop
+        p.length.should == 8
+        passwords.include?(p).should_not == true
 			end
 		end
 
 		it "should generate 4 random passwords with lengths of 10 characters" do
 			passwords = RandomPassword.passwords(4, 10)
 			passwords.size.should == 4
-			while p1 = passwords.pop
-				passwords.each do |p2|
-					p1.length.should == 10 
-					p1.should_not === p2
-				end
+			while p = passwords.pop
+        p.length.should == 10 
+        passwords.include?(p).should_not == true
+			end
+		end
+
+		it "should generate 3 random 'human' passwords with lengths of 8 characters" do
+			passwords = RandomPassword.human_passwords
+			passwords.size.should == 3
+			while p = passwords.pop
+        p.length.should == 8
+        passwords.include?(p).should_not == true
 			end
 		end
 
@@ -42,22 +47,27 @@ describe "Random password generator" do
 		it "should generate 3 random passwords with lengths of 8 characters" do
 			passwords = @r.passwords
 			passwords.size.should == 3
-			while p1 = passwords.pop
-				passwords.each do |p2|
-					p1.length.should == 8
-					p1.should_not === p2
-				end
+			while p = passwords.pop
+        p.length.should == 8
+        passwords.include?(p).should_not == true
+			end
+		end
+
+		it "should generate 3 random 'human' passwords with lengths of 8 characters" do
+			passwords = @r.human_passwords
+			passwords.size.should == 3
+			while p = passwords.pop
+        p.length.should == 8
+        passwords.include?(p).should_not == true
 			end
 		end
 
 		it "should generate 4 random passwords with lengths of 10 characters" do
 			passwords = @r.passwords(4, 10)
 			passwords.size.should == 4
-			while p1 = passwords.pop
-				passwords.each do |p2|
-					p1.length.should == 10 
-					p1.should_not === p2
-				end
+			while p = passwords.pop
+        p.length.should == 10 
+        passwords.include?(p).should_not == true
 			end
 		end
 
@@ -66,14 +76,12 @@ describe "Random password generator" do
 			@r.exclude_chars(exclude_chars)
 			passwords = @r.passwords
 			passwords.size.should == 3
-			while p1 = passwords.pop
+			while p = passwords.pop
 				exclude_chars.each do |x|
-					p1.include?(x).should == false
+					p.include?(x).should == false
 				end	
-				passwords.each do |p2|
-					p1.length.should == 8 
-					p1.should_not === p2
-				end
+        p.length.should == 8 
+        passwords.include?(p).should_not == true
 			end
 		end
 
